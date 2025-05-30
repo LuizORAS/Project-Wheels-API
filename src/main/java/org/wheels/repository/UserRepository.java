@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class UserRepository {
-    private static final String USER_CSV = "src/main/resources/users.csv";
+    private static final String USER_CSV = "src/main/resources/csv/users.csv";
     private static final String CSV_HEADER = "userID,firstName,lastName,email,password,plano,dataCriacao,viagensHoje,multaAtual,proximaCobranca,bikeAlugada,horaAluguel";
 
     public List<User> findAll() {
