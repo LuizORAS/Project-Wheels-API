@@ -62,7 +62,7 @@ public class UserRepository {
         try (PrintWriter pw = new PrintWriter(new FileWriter(USER_CSV))) {
             pw.println(CSV_HEADER);
             for (User u : users) {
-                pw.printf("%d,%s,%s,%s,%s,%s,%s,%d,%.2f,%s,%s,%s%n",
+                pw.printf(Locale.US,"%d,%s,%s,%s,%s,%s,%s,%d,%.2f,%s,%s,%s%n",
                         u.getUserID(),
                         u.getFirstName(),
                         u.getLastName(),

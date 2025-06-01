@@ -87,7 +87,7 @@ public class BikeService {
         double multa = 0;
         if (minutosUso > limiteMin && limiteMin > 0) {
             int minutosExcedidos = (int) (minutosUso - limiteMin);
-            multa = minutosExcedidos * 0.50; // Exemplo: 0,50 por minuto
+            multa = bike.getType().calculateFine(minutosExcedidos);
             user.setMultaAtual(user.getMultaAtual() + multa);
         }
 

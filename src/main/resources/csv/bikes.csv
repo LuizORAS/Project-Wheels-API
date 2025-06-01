@@ -1,5 +1,4 @@
 id,type,available
-1,BASIC,true
 2,BASIC,true
 3,BASIC,true
 4,BASIC,true
@@ -14,3 +13,4 @@ id,type,available
 13,ELECTRIC,true
 14,ELECTRIC,true
 15,ELECTRIC,true
+1,BASIC,true

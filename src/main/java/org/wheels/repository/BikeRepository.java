@@ -25,7 +25,7 @@ public class BikeRepository {
 
         List<Bike> bikes = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(BIKE_CSV))) {
-            String line; // header
+            String line = br.readLine(); // header
             while ((line = br.readLine()) != null) {
                 String[] tokens = line.split(",", -1);
                 if (tokens.length >= 3) {
