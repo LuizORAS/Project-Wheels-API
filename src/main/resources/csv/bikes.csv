@@ -3,7 +3,6 @@ id,type,available
 3,BASIC,true
 4,BASIC,true
 5,BASIC,true
-6,COMFORT,true
 7,COMFORT,true
 8,COMFORT,true
 9,COMFORT,true
@@ -11,6 +10,7 @@ id,type,available
 11,ELECTRIC,true
 12,ELECTRIC,true
 13,ELECTRIC,true
-14,ELECTRIC,true
 15,ELECTRIC,true
 1,BASIC,true
+14,ELECTRIC,true
+6,COMFORT,true

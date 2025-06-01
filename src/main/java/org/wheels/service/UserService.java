@@ -10,9 +10,11 @@ import java.util.List;
 @Service
 public class UserService {
     private final UserRepository userRepository;
+    private ReceiptService receiptService;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, ReceiptService receiptService) {
         this.userRepository = userRepository;
+        this.receiptService = receiptService;
     }
 
     public List<User> getAllUsers() {
@@ -36,7 +38,9 @@ public class UserService {
         if (user != null) {
             user.setPlano(newPlan);
             userRepository.save(user);
-            // Aqui você pode adicionar lógica para pagamento e recibo se precisar!
+
+            // Gera o recibo ao trocar de plano
+            receiptService.generateReceipt(user, newPlan);
         }
     }
 
