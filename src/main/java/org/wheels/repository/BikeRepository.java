@@ -9,8 +9,16 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class BikeRepository {
-    private static final String BIKE_CSV = "src/main/resources/csv/bikes.csv";
+    private static final String DATA_DIR = "data/csv";
+    private static final String BIKE_CSV = DATA_DIR + "/bikes.csv";
     private static final String CSV_HEADER = "id,type,available";
+
+    public BikeRepository() {
+        File dir = new File(DATA_DIR);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+    }
 
     public List<Bike> findAll() {
         File file = new File(BIKE_CSV);

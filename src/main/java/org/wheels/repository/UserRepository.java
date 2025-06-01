@@ -9,8 +9,16 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class UserRepository {
-    private static final String USER_CSV = "src/main/resources/csv/users.csv";
+    private static final String DATA_DIR = "data/csv";
+    private static final String USER_CSV = DATA_DIR + "/users.csv";
     private static final String CSV_HEADER = "userID,firstName,lastName,email,password,plano,dataCriacao,viagensHoje,multaAtual,proximaCobranca,bikeAlugada,horaAluguel";
+
+    public UserRepository() {
+        File dir = new File(DATA_DIR);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+    }
 
     public List<User> findAll() {
         File file = new File(USER_CSV);

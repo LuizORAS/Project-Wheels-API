@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 @Service
 public class ReceiptService {
-    private static final String RECEIPT_DIR = "src/main/resources/receipts";
+    private static final String RECEIPT_DIR = "data/receipts";
 
     public ReceiptService() {
         File dir = new File(RECEIPT_DIR);
