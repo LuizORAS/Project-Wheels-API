@@ -23,6 +23,8 @@ public class UserController {
 
     @PostMapping
     public void create(@RequestBody User user) {
+        user.setBikeAlugada("");
+        user.setHoraAluguel("");
         userService.saveUser(user);
     }
 

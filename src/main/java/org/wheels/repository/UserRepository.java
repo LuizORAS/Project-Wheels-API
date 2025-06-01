@@ -84,10 +84,13 @@ public class UserRepository {
 
     public void save(User user) {
         List<User> users = findAll();
-        Optional<User> existing = users.stream().filter(u -> u.getUserID() == user.getUserID()).findFirst();
-        if (existing.isPresent()) {
-            users.remove(existing.get());
+        if (user.getUserID() == 0 || users.stream().anyMatch(u -> u.getUserID() == user.getUserID())) {
+            // Gera novo ID
+            int maxId = users.stream().mapToInt(User::getUserID).max().orElse(0);
+            user.setUserID(maxId + 1);
         }
+        // Remove qualquer usuário antigo com mesmo email (para evitar duplicidade)
+        users.removeIf(u -> u.getEmail().equalsIgnoreCase(user.getEmail()));
         users.add(user);
         saveAll(users);
     }
