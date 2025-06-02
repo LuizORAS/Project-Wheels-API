@@ -33,4 +33,8 @@ public class BikeController {
     public void returnBike(@PathVariable int id, @RequestParam String userEmail) {
         bikeService.returnBike(id, userEmail);
     }
+    @PostMapping
+    public void createBike(@RequestBody Bike bike) {
+        bikeService.saveBike(bike);
+    }
 }
