@@ -1,9 +1,5 @@
 package org.wheels.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 public class Bike {
     private int id;
     private BikeType type;
