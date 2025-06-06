@@ -3,7 +3,7 @@ package org.wheels.model;
 public class Bike {
     private int id;
     private BikeType type;
-    private boolean available;
+    private boolean available = true;
 
     public Bike() {}
     public Bike(int id, BikeType type, boolean available) {
